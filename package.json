@@ -7,5 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Colby Fayock <hello@colbyfayock.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "tmi.js": "^1.7.5"
+  }
 }

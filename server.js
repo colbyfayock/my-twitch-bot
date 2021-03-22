@@ -37,9 +37,15 @@ client.on('message', async (channel, context, message) => {
 
   const { response } = commands[command] || {};
 
-  if ( typeof response === 'function' ) {
-    client.say(channel, response(argument));
-  } else if ( typeof response === 'string' ) {
-    client.say(channel, response);
+  let responseMessage = response;
+
+  if ( typeof responseMessage === 'function' ) {
+    responseMessage = response(argument);
   }
+
+  if ( responseMessage ) {
+    console.log(`Responding to command !${command}`);
+    client.say(channel, responseMessage);
+  }
+
 });
